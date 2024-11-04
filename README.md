@@ -73,8 +73,10 @@ python train.py
 Important: Before running the training script, you need to modify the train.py file:
 1. Locate the train_model function call
 2. Update the data_directory parameter with the path to your dataset:
-  train_model(data_dir='path/to/your/dataset')
 
+```
+  train_model(data_dir='path/to/your/dataset')
+```
 ### Evaluation
 To evaluate model performance:
 ```
