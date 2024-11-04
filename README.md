@@ -65,7 +65,10 @@ Each class should be in a separate folder containing multiple images of the same
 
 ### Training
 To train the model:
+
+```
 python train.py
+```
 
 Important: Before running the training script, you need to modify the train.py file:
 1. Locate the train_model function call
