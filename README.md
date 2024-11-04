@@ -23,6 +23,7 @@ The system uses a combination of powerful deep learning models:
 ## 🛠️ Requirements
 
 ### Required Modules
+```
 tensorflow
 keras
 opencv-python
@@ -37,33 +38,39 @@ requests
 tempfile
 fastapi
 uvicorn
-
+```
 Install dependencies using:
-pip install -r requirements.txt
+```
+pip install tensorflow keras opencv-python mtcnn scikit-learn joblib numpy pandas streamlit pillow requests tempfile fastapi uvicorn
+```
+## 📂 Data Format & Setup
 
-## 📂 Data Format
-
-For training with custom dataset, organize your data in the following structure:
+### Dataset Structure
+Before training, ensure your dataset follows this specific structure:
+```
 dataset/
-    ├── Class1/
-    │   ├── img1.jpg
-    │   ├── img2.jpg
-    │   └── ...
-    ├── Class2/
-    │   ├── img1.jpg
-    │   ├── img2.jpg
-    │   └── ...
-    └── ...
+   ├── Class1/
+   │   ├── img1.jpg
+   │   ├── img2.jpg
+   │   └── ...
+   ├── Class2/
+   │   ├── img1.jpg
+   │   ├── img2.jpg
+   │   └── ...
+   └── ...
+```
+Each class should be in a separate folder containing multiple images of the same person/subject. This structure is crucial for the proper functioning of the training pipeline.
 
 ## 🚀 Usage
-
-### Data Preprocessing
-To prepare your dataset:
-python data_preprocessing.py
 
 ### Training
 To train the model:
 python train.py
+
+Important: Before running the training script, you need to modify the train.py file:
+1. Locate the train_model function call
+2. Update the data_directory parameter with the path to your dataset:
+  train_model(data_dir='path/to/your/dataset')
 
 ### Evaluation
 To evaluate model performance:
@@ -73,15 +80,23 @@ python evaluate.py
 To perform face recognition on images:
 python recognize.py
 
+Note: Before running recognition:
+1. Open recognize.py in your preferred editor
+2. Locate the image path variable
+3. Update it with the path to your test image:
+  image_path = 'path/to/your/test/image.jpg'
+
 ### Running the Web Interface
 
 1. Start the server:
 cd Server
-python server.py
+python main.py
 
 2. In a new terminal, start the client:
 cd Client
 streamlit run client.py
+
+The web interface will be accessible through your browser at localhost:8501
 
 ## 📁 Project Structure
 
@@ -92,22 +107,53 @@ streamlit run client.py
 - train.py: Training script with Siamese network
 - evaluate.py: Model evaluation script
 - Client/: Contains Streamlit web interface
-- Server/: Contains FastAPI server implementation
+- Server/: Contains FastAPI server implementation and main.py for server startup
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+Contributions are welcome! Please feel free to submit a Pull Request. Make sure to:
+1. Fork the repository
+2. Create a new branch for your feature
+3. Add your changes
+4. Submit a pull request with a comprehensive description of changes
 
 ## 📝 License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the Apache License 2.0 - see the LICENSE file for details.
+
+Copyright [2024] [Your Name]
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
 
 ## 🙏 Acknowledgments
 
 - Thanks to the original FaceNet paper authors
 - MTCNN implementation references
 - Siamese Networks research papers
+- The open-source community for various dependencies
 
 ## 📧 Contact
 
 For any queries or support, please open an issue in the repository.
+
+## 🚀 Getting Started
+
+1. Clone the repository
+2. Install dependencies: pip install -r requirements.txt
+3. Prepare your dataset following the specified structure
+4. Run the preprocessing script
+5. Train the model with your dataset
+6. Start the server and client for the web interface
+7. Begin recognizing faces!
+
+For detailed troubleshooting and additional information, please refer to the issues section of the repository.
