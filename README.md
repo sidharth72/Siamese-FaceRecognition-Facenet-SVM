@@ -74,11 +74,15 @@ Important: Before running the training script, you need to modify the train.py f
 
 ### Evaluation
 To evaluate model performance:
+```
 python evaluate.py
+```
 
 ### Face Recognition
 To perform face recognition on images:
+```
 python recognize.py
+```
 
 Note: Before running recognition:
 1. Open recognize.py in your preferred editor
@@ -89,12 +93,17 @@ Note: Before running recognition:
 ### Running the Web Interface
 
 1. Start the server:
+
+```
 cd Server
 python main.py
+```
 
-2. In a new terminal, start the client:
+3. In a new terminal, start the client:
+```
 cd Client
 streamlit run client.py
+```
 
 The web interface will be accessible through your browser at localhost:8501
 
@@ -120,20 +129,6 @@ Contributions are welcome! Please feel free to submit a Pull Request. Make sure 
 ## 📝 License
 
 This project is licensed under the Apache License 2.0 - see the LICENSE file for details.
-
-Copyright [2024] [Your Name]
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-   http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
 
 ## 🙏 Acknowledgments
 
